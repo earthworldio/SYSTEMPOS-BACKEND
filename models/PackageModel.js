@@ -1,20 +1,20 @@
 const conn = require('../connect')
-const { DataType, DataTypes } = require('sequelize')
+const { DataTypes } = require('sequelize')
 
-const PackageModel = conn.define('package' , {
-    id : {
-        type : DataTypes.BIGINT ,
-        primaryKey : true ,
-        autoIncrement : true
-    } ,
-    name : {
-        type : DataTypes.STRING(255)
+const PackageModel = conn.define('package', {
+    id: {
+        type: DataTypes.BIGINT,
+        primaryKey: true,
+        autoIncrement: true
     },
-    bill_amount : {
-        type : DataTypes.BIGINT
+    name: {
+        type: DataTypes.STRING(255)
     },
-    price : {
-        type : DataTypes.BIGINT
+    bill_amount: {
+        type: DataTypes.BIGINT
+    },
+    price: {
+        type: DataTypes.BIGINT
     }
 })
 

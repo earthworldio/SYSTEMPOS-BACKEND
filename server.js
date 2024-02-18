@@ -11,7 +11,8 @@ var cors = require('cors')
 app.use(cors())
 
 app.use(require('./controllers/PackageController'))
+app.use(require('./controllers/MemberControllers'))
 
 app.listen(port, (req, res) => {
-    console.log(`App listening on port : ${port}`);
+    console.log(`App listening on port : ${port}`)
 })

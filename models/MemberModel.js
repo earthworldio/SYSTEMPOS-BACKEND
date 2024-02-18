@@ -7,7 +7,7 @@ const MemberModel = conn.define('member', {
         primaryKey: true,
         autoIncrement: true
     },
-    packageID: {
+    packageId: {
         type: DataTypes.BIGINT
     },
     name: {
@@ -15,8 +15,12 @@ const MemberModel = conn.define('member', {
     },
     phone: {
         type: DataTypes.STRING(255)
+    },
+    password: {
+        type: DataTypes.STRING(255)
     }
 })
 // USE FOR CREATE TABLE IN DATABASE
-// MemberModel.sync({ alter: true })
+MemberModel.sync({ alter: true })
+
 module.exports = MemberModel

@@ -10,15 +10,14 @@ app.get('/package/list', async (req, res) => {
     } catch (e) {
         res.send({ message: e.message })
     }
-
 })
 
 app.post('/package/memberRegister', async (req, res) => {
     try {
-        const result = await MemberModel.create(req.body)
-        res.send({ message: 'success', result: result })
+        const result = await MemberModel.create(req.body);
+        res.send({ message: 'success', result: result });
     } catch (e) {
-        res.send({ message: e.message })
+        res.send({ message: e.message });
     }
 })
 
