@@ -44,4 +44,20 @@ app.get('/member/info', service.isLogin, async (req, res, next) => {
     }
 })
 
+app.put('/member/changeProfile', service.isLogin, async (req, res) => {
+    try {
+        const memberId = service.getMemberId(req)
+        console.log(memberId);
+        const payload = { name: req.body.memberName }
+        console.log(payload);
+        const result = await MemberModel.update(payload, {
+            where: { id: memberId }
+        })
+        res.send({ message: 'success', result: result })
+    } catch (e) {
+        res.statusCode = 500
+        return res.send({ message: e.message, })
+    }
+})
+
 module.exports = app

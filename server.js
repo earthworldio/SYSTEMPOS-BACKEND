@@ -12,7 +12,6 @@ app.use(cors())
 
 app.use(require('./controllers/PackageController'))
 app.use(require('./controllers/MemberControllers'))
+app.use(require('./controllers/ProductController'))
 
-app.listen(port, (req, res) => {
-    console.log(`App listening on port : ${port}`)
-})
+app.listen(port, (req, res) => { console.log(`App listening on port : ${port}`) })

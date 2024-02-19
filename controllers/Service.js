@@ -12,9 +12,7 @@ module.exports = {
 
             try {
                 const verify = jwt.verify(token, secret)
-                if (verify != null) {
-                    next()
-                }
+                if (verify != null) { next() }
                 return
             } catch (e) {
 
@@ -22,5 +20,11 @@ module.exports = {
         }
         res.statusCode = 401
         return res.send('authorize fail')
+    },
+    getMemberId: (req) => {
+        const jwt = require('jsonwebtoken')
+        const token = req.headers.authorization.replace('Bearer ', '')
+        const payload = jwt.decode(token)
+        return payload.id
     }
 }
